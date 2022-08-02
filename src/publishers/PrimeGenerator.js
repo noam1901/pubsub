@@ -6,24 +6,14 @@ class Prime extends Events{
         this.buttomNumber = 2
         this.max = max
     }
-    generator(){
-        let flag = false
-        if (this.buttomNumber===this.max){
-            return
+    *generator(){
+        for (let i = this.buttomNumber; i < this.max; i++) {
+            if(this.isPrime(i)){
+                yield i
+                console.log(i);
         }
-        if(this.isPrime(this.buttomNumber)){
-            this.emit('start',this.buttomNumber)
-            console.log(chalk.white(this.buttomNumber));
-            flag = true
-        }
-        
-        this.buttomNumber++
-        if(flag){
-            setTimeout(()=> this.generator(),1000)
-        }
-        else{
-            this.generator()
-        }
+            
+    }
     }
     isPrime(num){
         for(let i = 2, s = Math.floor(Math.sqrt(num)); i <= s ; i++ )
