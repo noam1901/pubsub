@@ -1,3 +1,4 @@
+import chalk from 'chalk'
 class Mersenne{
     
     isMersenne(primeNum){
@@ -7,6 +8,7 @@ class Mersenne{
             while (power <= primeNum + 1) {
                 power = parseInt(Math.pow(2, n));
                 if (power == primeNum + 1) {
+                    console.log(chalk.blue(primeNum));
                     return true;
                 }
                 n++;
