@@ -1,6 +1,9 @@
-import Events from "../myEvent.js";
+
 import chalk from 'chalk'
-class Prime extends Events{
+import { EventEmitter  } from 'node:events'
+
+
+class Prime extends EventEmitter{
     constructor(max){
         super()
         this.buttomNumber = 2
