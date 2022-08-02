@@ -1,18 +1,23 @@
-class Prime{
+import Events from "../myEvent.js";
+class Prime extends Events{
     constructor(max){
-        this.number = 1
+        super()
+        this.buttomNumber = 2
         this.max = max
     }
-    Generator(){
-        for(let i = 1; i < this.max; i+2 ){
-            let flag = true
-            for (let y = 2; y * y <= i; y++){
-                if (i % y === 0){
-                    flag = false
-                }
+    *generator(){
+        for(let i=this.buttomNumber; i<this.max;i++){
+            if(this.isPrime(i)){
+                yield i
             }
-            setTimeout(()=>console.log(i),1000) 
         }
+    }
+    isPrime(num){
+        for(let i = 2, s = Math.floor(Math.sqrt(num)); i <= s ; i++ )
+            if(num % i === 0) return false;
+        return num > 1;
+            
+        
     }
 }
 
