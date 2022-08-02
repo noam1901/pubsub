@@ -5,7 +5,7 @@ import fourDigits from "./clients/prime4Digits.js";
 
 
 const run = () => {
-    const primes = new Prime(1000)
+    const primes = new Prime(100)
     const mersenne = new Mersenne()
     const end1 = new primeEndsWithOne()
     const fourdigits = new fourDigits
