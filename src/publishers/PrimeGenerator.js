@@ -9,6 +9,7 @@ class Prime extends Events{
         for(let i=this.buttomNumber; i<this.max;i++){
             if(this.isPrime(i)){
                 yield i
+                this.emit('start', i)
             }
         }
     }
