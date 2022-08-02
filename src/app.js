@@ -1,5 +1,10 @@
-import Prime from "./PrimeGenerator.js";
+import Prime from "./publishers/PrimeGenerator.js";
 
-const primes = new Prime(100)
+const primes = new Prime(30)
 
-primes.Generator()
+for(let value of primes.generator()){
+    console.log(value);
+}
+
+
+
